@@ -14,4 +14,7 @@ RUN apt install -y libgtest-dev
 # for coin-or
 RUN apt install -y coinor-libclp-dev coinor-clp
 
+# for clang and include-what-you-use
+RUN apt install -y clang iwyu
+
 CMD ["/bin/bash"]

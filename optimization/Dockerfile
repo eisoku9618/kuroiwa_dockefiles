@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 RUN apt update && apt install -y \
 # for build
@@ -9,8 +9,8 @@ libeigen3-dev \
 libgtest-dev \
 # for coin-or
 coinor-libclp-dev coinor-clp \
-# for clang and include-what-you-use (include-what-you-use in 18.04 requires clang-5.0)
-clang-5.0 iwyu \
+# for clang and include-what-you-use (include-what-you-use in 16.04 requires clang-3.7)
+clang-3.7 iwyu \
 && rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]

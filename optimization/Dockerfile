@@ -9,8 +9,8 @@ libeigen3-dev \
 libgtest-dev \
 # for coin-or
 coinor-libclp-dev coinor-clp \
-# for clang and include-what-you-use
-clang iwyu \
+# for clang and include-what-you-use (include-what-you-use in 18.04 requires clang-5.0)
+clang-5.0 iwyu \
 && rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]

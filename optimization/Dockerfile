@@ -10,7 +10,7 @@ libgtest-dev \
 # for coin-or
 coinor-libclp-dev coinor-clp \
 # for clang and include-what-you-use (include-what-you-use in 16.04 requires clang-3.7)
-clang-3.7 iwyu \
+clang clang-3.7 iwyu \
 && rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]

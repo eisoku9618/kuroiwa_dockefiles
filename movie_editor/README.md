@@ -11,7 +11,7 @@ https://qiita.com/eisoku9618/items/df7bc082545cf70cc724 が詳しい．
 まずは，比較的新し目のffmpegが入っているdocker containerを起動し，対象の動画を含むディレクトリをマウントする．
 
 ```bash
-docker run --rm -it -v `pwd`/../:/home/ -w /home/ eisoku9618/kuroiwa_dockefiles_for_movie_editor /bin/ash
+docker run --rm -it -v `pwd`:/home/ -w /home/ eisoku9618/kuroiwa_dockefiles_for_movie_editor /bin/ash
 ```
 
 ## 代表的なffmpegコマンド

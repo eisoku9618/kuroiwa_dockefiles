@@ -27,5 +27,8 @@ docker run --rm -it -v `pwd`:/home/ -w /home/ eisoku9618/kuroiwa_dockefiles_for_
    - 複数の動画を縦に結合して1つの動画にする
 - ``ffmpeg -i in_1.mp4 -i in_2.mp4 -filter_complex "concat=n=2:v=1:a=0" output.mp4``
    - 複数の動画を時間方向に連結して1つの動画にする
-- ``ffmpeg -i input.mp4 -c:v h264 -preset slow -tune film -an -filter:v "setpts=1/2*PTS, drawtext=text='2x':x=0:y=0:fontsize=100:fontcolor=white:box=1:boxcolor=black@0.5" output.mp4``
-   - 動画を倍速にして2倍の文字を入れる
+- ``ffmpeg -i input.mp4 -c:v h264 -preset slow -tune film -an -filter:v "setpts=1/2*PTS" output.mp4``
+   - 動画を倍速にする
+      - 以下のように文字を入れるには``--enable-libfreetype``付きでビルドされているffmpegが必要であり，残念ながらalpineのapkで入るffmpegはそのオプションが付いていない模様．．．
+         - https://stackoverflow.com/a/48037936
+         - ``ffmpeg -i input.mp4 -c:v h264 -preset slow -tune film -an -filter:v "setpts=1/2*PTS, drawtext=text='2x':x=0:y=0:fontsize=100:fontcolor=white:box=1:boxcolor=black@0.5" output.mp4``

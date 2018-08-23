@@ -13,6 +13,8 @@ latexmk \
 fonts-noto-cjk \
 # for noto font: Black, DemiLight, Light, Medium, Thin and so on
 fonts-noto-cjk-extra \
+# for extra fonts
+texlive-fonts-recommended \
 && rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]

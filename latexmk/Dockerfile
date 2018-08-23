@@ -1,21 +1,18 @@
 FROM ubuntu:18.04
 
-# for tex
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt update && apt install -y \
-# for tex
-texlive-latex-extra texlive-fonts-recommended texlive-lang-japanese fonts-lmodern \
+RUN apt update && apt install -y --no-install-recommends \
+# for (u)platex
+texlive-lang-japanese \
+# for CTAN packages
+texlive-plain-generic texlive-latex-base texlive-latex-extra \
 # for latexmk
 latexmk \
-# for noto font
-fonts-noto-cjk fonts-noto-cjk-extra \
-git \
+# for noto font: Bold and Regular
+fonts-noto-cjk \
+# for noto font: Black, DemiLight, Light, Medium, Thin and so on
+fonts-noto-cjk-extra \
 && rm -rf /var/lib/apt/lists/*
-
-RUN git clone https://github.com/vvakame/docker-review.git \
-&& mv docker-review/noto /usr/share/texlive/texmf-dist/fonts/map/dvipdfmx/ptex-fontmaps/ \
-&& rm -rf docker-review \
-&& mktexlsr && kanji-config-updmap-sys noto
 
 CMD ["/bin/bash"]

@@ -16,7 +16,7 @@ fonts-noto-cjk-extra \
 # for extra fonts
 texlive-fonts-recommended \
 # for Awesome CV: https://github.com/posquit0/Awesome-CV
-texlive-xetex fonts-font-awesome texlive-fonts-extra \
+texlive-xetex fonts-font-awesome texlive-fonts-extra fontconfig \
 && rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]

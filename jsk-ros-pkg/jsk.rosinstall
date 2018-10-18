@@ -1,0 +1,38 @@
+- git:
+    uri: https://github.com/jsk-ros-pkg/jsk_roseus.git
+    local-name: jsk-ros-pkg/jsk_roseus
+# - git:
+#     uri: https://github.com/jsk-ros-pkg/jsk_robot.git
+#     local-name: jsk-ros-pkg/jsk_robot
+- git:
+    uri: https://github.com/jsk-ros-pkg/jsk_pr2eus.git
+    local-name: jsk-ros-pkg/jsk_pr2eus
+# - git:
+#     uri: https://github.com/jsk-ros-pkg/jsk_model_tools.git
+#     local-name: jsk-ros-pkg/jsk_model_tools
+# - git:
+#     uri: https://github.com/jsk-ros-pkg/jsk_common.git
+#     local-name: jsk-ros-pkg/jsk_common
+# - git:
+#     uri: https://github.com/jsk-ros-pkg/jsk_common_msgs.git
+#     local-name: jsk-ros-pkg/jsk_common_msgs
+# - git:
+#     uri: https://github.com/jsk-ros-pkg/jsk_3rdparty.git
+#     local-name: jsk-ros-pkg/jsk_3rdparty
+
+- git:
+    uri: https://github.com/start-jsk/rtmros_common.git
+    local-name: rtm-ros-robotics/rtmros_common
+# - git:
+#     uri: https://github.com/start-jsk/rtmros_hironx.git
+#     local-name: rtm-ros-robotics/rtmros_hironx
+- git:
+    uri: https://github.com/start-jsk/rtmros_tutorials.git
+    local-name: rtm-ros-robotics/rtmros_tutorials
+- git:
+    uri: https://github.com/start-jsk/rtmros_gazebo.git
+    local-name: rtm-ros-robotics/rtmros_gazebo
+
+# - git:
+#     uri: https://github.com/tork-a/rtmros_nextage.git
+#     local-name: rtm-ros-robotics/rtmros_nextage

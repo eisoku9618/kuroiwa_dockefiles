@@ -18,7 +18,7 @@ RUN mkdir -p ${ROS_INSTALLDIR_SRC} \
 RUN mkdir -p ${ROS_INSTALLDIR_PARENT_SRC} \
 && wstool init ${ROS_INSTALLDIR_PARENT_SRC} \
 && apt update \
-&& ${ROS_INSTALLDIR_SRC}/jsk-ros-pkg/jsk_roseus/setup_upstream.sh -w ${ROS_INSTALLDIR_PARENT_SRC}/../ \
+# && ${ROS_INSTALLDIR_SRC}/jsk-ros-pkg/jsk_roseus/setup_upstream.sh -w ${ROS_INSTALLDIR_PARENT_SRC}/../ \
 && ${ROS_INSTALLDIR_SRC}/rtm-ros-robotics/rtmros_common/setup_upstream.sh -w ${ROS_INSTALLDIR_PARENT_SRC}/../ \
 && rm -rf /var/lib/apt/lists/*
 

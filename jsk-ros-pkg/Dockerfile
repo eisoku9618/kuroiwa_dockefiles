@@ -30,10 +30,10 @@ RUN apt update \
 
 # build non-ros packages and then build ros packages (chain)
 RUN . /opt/ros/indigo/setup.sh \
-&& cd {ROS_INSTALLDIR_PARENT_SRC}/../ \
+&& cd ${ROS_INSTALLDIR_PARENT_SRC}/../ \
 && catkin build \
-&& . {ROS_INSTALLDIR_PARENT_SRC}/../devel/setup.sh \
-&& cd {ROS_INSTALLDIR_SRC}/../ \
+&& . ${ROS_INSTALLDIR_PARENT_SRC}/../devel/setup.sh \
+&& cd ${ROS_INSTALLDIR_SRC}/../ \
 && catkin build
 
 # setup entrypoint

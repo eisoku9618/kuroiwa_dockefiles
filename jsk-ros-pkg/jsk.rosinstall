@@ -29,9 +29,9 @@
 - git:
     uri: https://github.com/start-jsk/rtmros_tutorials.git
     local-name: rtm-ros-robotics/rtmros_tutorials
-- git:
-    uri: https://github.com/start-jsk/rtmros_gazebo.git
-    local-name: rtm-ros-robotics/rtmros_gazebo
+# - git:
+#     uri: https://github.com/start-jsk/rtmros_gazebo.git
+#     local-name: rtm-ros-robotics/rtmros_gazebo
 
 # - git:
 #     uri: https://github.com/tork-a/rtmros_nextage.git

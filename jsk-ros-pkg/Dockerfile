@@ -1,6 +1,6 @@
 FROM ros:indigo-robot
 
-ARG ROS_INSTALLDIR=~/catkin_ws/indigo
+ARG ROS_INSTALLDIR=/root/catkin_ws/indigo
 ARG ROS_INSTALLDIR_SRC=${ROS_INSTALLDIR}/src/
 ARG ROS_INSTALLDIR_PARENT_SRC=${ROS_INSTALLDIR}_parent/src/
 
@@ -29,14 +29,12 @@ RUN apt update \
 && rm -rf /var/lib/apt/lists/*
 
 # build non-ros packages and then build ros packages (chain)
-RUN . /opt/ros/indigo/setup.sh \
+RUN . /opt/ros/indigo/setup.bash \
 && cd ${ROS_INSTALLDIR_PARENT_SRC}/../ \
 && catkin build \
-&& . ${ROS_INSTALLDIR_PARENT_SRC}/../devel/setup.sh \
+&& . ${ROS_INSTALLDIR_PARENT_SRC}/../devel/setup.bash \
 && cd ${ROS_INSTALLDIR_SRC}/../ \
-&& catkin build
+&& catkin build \
+&& echo "source '/root/catkin_ws/indigo/devel/setup.bash'" >> /root/.bashrc
 
-# setup entrypoint
-COPY ./ros_entrypoint.sh /
-ENTRYPOINT ["/ros_entrypoint.sh"]
-CMD ["/bin/bash"]
+CMD ["bash"]

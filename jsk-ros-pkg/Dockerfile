@@ -29,10 +29,11 @@ RUN apt update \
 && rm -rf /var/lib/apt/lists/*
 
 # build non-ros packages and then build ros packages (chain)
-RUN . /opt/ros/indigo/setup.bash \
+SHELL ["/bin/bash", "-c"]
+RUN source /opt/ros/indigo/setup.bash \
 && cd ${ROS_INSTALLDIR_PARENT_SRC}/../ \
 && catkin build \
-&& . ${ROS_INSTALLDIR_PARENT_SRC}/../devel/setup.bash \
+&& source ${ROS_INSTALLDIR_PARENT_SRC}/../devel/setup.bash \
 && cd ${ROS_INSTALLDIR_SRC}/../ \
 && catkin build \
 && echo "source '/root/catkin_ws/indigo/devel/setup.bash'" >> /root/.bashrc

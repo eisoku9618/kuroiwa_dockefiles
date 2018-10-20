@@ -1,4 +1,4 @@
-FROM ros:indigo-robot
+FROM eisoku9618/kuroiwa_dockefiles_for_jsk_ros_pkg:depend
 
 ARG ROS_INSTALLDIR=/root/catkin_ws/indigo
 ARG ROS_INSTALLDIR_SRC=${ROS_INSTALLDIR}/src/
@@ -20,12 +20,6 @@ RUN mkdir -p ${ROS_INSTALLDIR_PARENT_SRC} \
 && apt update \
 # && ${ROS_INSTALLDIR_SRC}/jsk-ros-pkg/jsk_roseus/setup_upstream.sh -w ${ROS_INSTALLDIR_PARENT_SRC}/../ \
 && ${ROS_INSTALLDIR_SRC}/rtm-ros-robotics/rtmros_common/setup_upstream.sh -w ${ROS_INSTALLDIR_PARENT_SRC}/../ \
-&& rm -rf /var/lib/apt/lists/*
-
-# install dependent packages by apt, pip, etc.
-RUN apt update \
-&& rosdep install -y -n -r --ignore-src --from-paths ${ROS_INSTALLDIR_SRC} ${ROS_INSTALLDIR_PARENT_SRC} \
-&& apt install --no-install-recommends -y python-catkin-tools \
 && rm -rf /var/lib/apt/lists/*
 
 # build non-ros packages and then build ros packages (chain)

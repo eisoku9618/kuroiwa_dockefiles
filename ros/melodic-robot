@@ -1,0 +1,7 @@
+FROM ros:melodic-robot
+
+RUN apt update \
+    && apt install -y python-catkin-tools \
+    && rm -rf /var/lib/apt/lists/*
+
+CMD ["/bin/bash"]

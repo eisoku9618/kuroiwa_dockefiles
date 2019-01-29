@@ -1,4 +1,4 @@
-FROM ros:melodic-perception
+FROM osrf/ros:melodic-desktop
 
 RUN apt update \
     && apt install -y python-catkin-tools clang-tidy-6.0 \

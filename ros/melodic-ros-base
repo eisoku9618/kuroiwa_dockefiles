@@ -1,7 +1,7 @@
 FROM ros:melodic-ros-base
 
 RUN apt update \
-    && apt install -y python-catkin-tools \
+    && apt install -y python-catkin-tools clang-tidy-6.0 \
     && rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]

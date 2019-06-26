@@ -2,14 +2,12 @@ ARG DISTRO=kinetic
 FROM ros:${DISTRO}-ros-core
 ARG DISTRO=kinetic
 
-COPY .rosinstall /tmp/.rosinstall
-
 RUN apt update \
         && apt install -y --no-install-recommends python-catkin-tools python-wstools \
         && mkdir -p /root/catkin_ws/src \
         && wstool init /root/catkin_ws/src \
-        && wstool merge -t /root/catkin_ws/src /tmp/.rosinstall \
-        && wstool update -t /root/catkin_ws/src -j2 \
+        && wstool set -y -t /root/catkin_ws/src --git https://github.com/PR2/pr2_common.git PR2/pr2_common \
+        && wstool update -t /root/catkin_ws/src \
         && rosdep install --from-paths /root/catkin_ws/src --ignore-src -y \
         && . /opt/ros/${DISTRO}/setup.sh \
         && catkin build -w /root/catkin_ws/ \

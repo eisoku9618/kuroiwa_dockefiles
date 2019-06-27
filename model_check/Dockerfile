@@ -6,7 +6,7 @@ RUN apt update \
         && apt install -y --no-install-recommends python-catkin-tools python-wstools \
         && mkdir -p /root/catkin_ws/src \
         && wstool init /root/catkin_ws/src \
-        && wstool set -y -t /root/catkin_ws/src --git https://github.com/PR2/pr2_common.git PR2/pr2_common \
+        && wstool set -y -t /root/catkin_ws/src --git PR2/pr2_common https://github.com/PR2/pr2_common.git \
         && wstool update -t /root/catkin_ws/src \
         && rosdep install --from-paths /root/catkin_ws/src --ignore-src -y \
         && . /opt/ros/${DISTRO}/setup.sh \

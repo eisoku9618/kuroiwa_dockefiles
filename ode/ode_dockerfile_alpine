@@ -17,7 +17,7 @@ RUN apk update && apk add automake autoconf libtool && rm -rf /var/cache/apk/*
 RUN cd /tmp/ode && ./bootstrap
 
 # configureプログラムを実行し，makeする
-RUN apk update && apk add freeglut-dev g++ make && rm -rf /var/cache/apk/*
+RUN apk update && apk add freeglut-dev glew-dev g++ make && rm -rf /var/cache/apk/*
 RUN cd /tmp/ode && ./configure --enable-double-precision --enable-ou --enable-libccd --with-drawstuff=X11 \
 && make -j`nproc` && make install
 

@@ -17,7 +17,7 @@ RUN apt install -y --no-install-recommends automake autoconf libtool
 RUN cd /tmp/ode && ./bootstrap
 
 # configureプログラムを実行し，makeする
-RUN apt install -y --no-install-recommends freeglut3-dev xorg-dev g++ make
+RUN apt install -y --no-install-recommends freeglut3-dev libglew-dev xorg-dev g++ make
 RUN cd /tmp/ode && ./configure --enable-double-precision --enable-ou --enable-libccd --with-drawstuff=X11 \
 && make -j`nproc` && make install
 

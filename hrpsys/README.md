@@ -23,5 +23,5 @@ roslaunch hrpsys samplerobot.launch
 
 ```bash
 . /opt/ros/indigo/setup.sh
-ipython -i /tmp/impedance-test.py
+python /tmp/impedance-test.py
 ```
